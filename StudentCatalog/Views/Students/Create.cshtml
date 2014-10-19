@@ -4,31 +4,36 @@
     ViewBag.Title = "Create";
 }
 
+
 <h2>Create</h2>
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary()
 
-    <label>Firstname</label>
-    <div>
-        @Html.TextBoxFor(x => x.Firstname)
-        @Html.ValidationMessageFor(x=>x.Firstname)
-    </div>
+<div class="grayBox">
 
-    <label>Lastname</label>
-    <div>
-        @Html.TextBoxFor(x => x.Lastname)
-    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
 
-    <label>Email</label>
-    <div>
-        @Html.TextBoxFor(x => x.Email)
-    </div>
+        <label>Firstname</label>
+        <div>
+            @Html.TextBoxFor(x=>x.Firstname)
+            @Html.ValidationMessageFor(x => x.Firstname)
+        </div>
 
-    <label>Mobile Phone</label>
-    <div>
-        @Html.TextBoxFor(x => x.MobilePhone)
-    </div>
-    
-    <input type="submit" value="Save"/>
-}
+        <label>Lastname</label>
+        <div>
+            @Html.TextBoxFor(x => x.Lastname, new { @class = "form-control" })
+        </div>
+
+        <label>Email</label>
+        <div>
+            @Html.TextBoxFor(x => x.Email)
+        </div>
+
+        <label>Mobile Phone</label>
+        <div>
+            @Html.TextBoxFor(x => x.MobilePhone)
+        </div>
+
+        <input type="submit" value="Save" class="btn btn-danger" id="myButton" />
+    }
+</div>
