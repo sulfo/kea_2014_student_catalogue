@@ -7,4 +7,10 @@
 
 <h2>Create</h2>
 
-@Html.Partial("_StudentCreateEditView")
+<div class="grayBox">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        @Html.Partial("_StudentCreateEditView")
+    }
+</div>

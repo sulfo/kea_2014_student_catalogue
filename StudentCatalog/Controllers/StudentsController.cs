@@ -5,14 +5,15 @@ using System.Linq;
 using System.Net.Mime;
 using System.Web;
 using System.Web.Mvc;
+using StudentCatalog.Abstract;
 using StudentCatalog.Models;
+using StudentCatalog.Repositories;
 
 namespace StudentCatalog.Controllers
 {
     public class StudentsController : Controller
     {
-        ApplicationDbContext _db = new ApplicationDbContext();
-
+        IStudentRepository repository = new StudentRepository();
         public string WannaPlayDad()
         {
             return "NO!";
@@ -22,14 +23,14 @@ namespace StudentCatalog.Controllers
         public ActionResult Index()
         {
             ViewBag.Lucas = "Hi dad";
-            List<Student> students = _db.Students.ToList();
+            List<Student> students = repository.GetAll();
             return View(students);
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Student student = _db.Students.Find(id);
+            Student student = repository.Find(id);
             return View(student);
         }
 
@@ -38,8 +39,7 @@ namespace StudentCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Entry(student).State = EntityState.Modified;
-                _db.SaveChanges();
+                repository.InsertOrUpdate(student);
                 return RedirectToAction("Index");
             }
             return View(student);
@@ -48,9 +48,8 @@ namespace StudentCatalog.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            Student student = _db.Students.Find(id);
-            _db.Entry(student).State = EntityState.Deleted;
-            _db.SaveChanges();
+            Student student = repository.Find(id);
+            repository.Delete(student);
             return RedirectToAction("Index");
         }
 
@@ -66,8 +65,7 @@ namespace StudentCatalog.Controllers
             if (ModelState.IsValid)
             {
                 //save
-                _db.Students.Add(student);
-                _db.SaveChanges();
+                repository.InsertOrUpdate(student);
 
                 return RedirectToAction("Index");
             }

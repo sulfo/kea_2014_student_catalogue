@@ -5,7 +5,15 @@
 }
 
 <h2>Edit</h2>
-@Html.Partial("_StudentCreateEditView")
+
+<div class="grayBox">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        @Html.HiddenFor(x => x.StudentId)
+        @Html.Partial("_StudentCreateEditView")
+    }
+</div>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
