@@ -46,6 +46,15 @@ namespace StudentCatalog.Controllers
         }
 
         [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Student student = _db.Students.Find(id);
+            _db.Entry(student).State = EntityState.Deleted;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
