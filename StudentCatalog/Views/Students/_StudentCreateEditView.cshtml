@@ -1,0 +1,32 @@
+﻿@model StudentCatalog.Models.Student
+
+<div class="grayBox">
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+
+        <label>Firstname</label>
+        <div>
+            @Html.TextBoxFor(x => x.Firstname)
+            @Html.ValidationMessageFor(x => x.Firstname)
+        </div>
+
+        <label>Lastname</label>
+        <div>
+            @Html.TextBoxFor(x => x.Lastname, new { @class = "form-control" })
+        </div>
+
+        <label>Email</label>
+        <div>
+            @Html.TextBoxFor(x => x.Email)
+        </div>
+
+        <label>Mobile Phone</label>
+        <div>
+            @Html.TextBoxFor(x => x.MobilePhone)
+        </div>
+
+        <input type="submit" value="Save" class="btn btn-danger" id="myButton" />
+    }
+</div>
