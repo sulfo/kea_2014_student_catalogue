@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net.Mime;
 using System.Web;
@@ -29,6 +30,19 @@ namespace StudentCatalog.Controllers
         public ActionResult Edit(int id)
         {
             Student student = _db.Students.Find(id);
+            return View(student);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Entry(student).State = EntityState.Modified;
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(student);
         }
 
         [HttpGet]
