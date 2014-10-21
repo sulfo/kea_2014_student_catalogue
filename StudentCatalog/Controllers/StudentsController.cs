@@ -13,7 +13,7 @@ namespace StudentCatalog.Controllers
 {
     public class StudentsController : Controller
     {
-        IStudentRepository repository = new StudentRepository();
+        IStudentRepository Repository = new StudentRepository();
         public string WannaPlayDad()
         {
             return "NO!";
@@ -23,14 +23,14 @@ namespace StudentCatalog.Controllers
         public ActionResult Index()
         {
             ViewBag.Lucas = "Hi dad";
-            List<Student> students = repository.GetAll();
+            List<Student> students = Repository.GetAll();
             return View(students);
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Student student = repository.Find(id);
+            Student student = Repository.Find(id);
             return View(student);
         }
 
@@ -39,7 +39,7 @@ namespace StudentCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
-                repository.InsertOrUpdate(student);
+                Repository.InsertOrUpdate(student);
                 return RedirectToAction("Index");
             }
             return View(student);
@@ -48,8 +48,8 @@ namespace StudentCatalog.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            Student student = repository.Find(id);
-            repository.Delete(student);
+            Student student = Repository.Find(id);
+            Repository.Delete(student);
             return RedirectToAction("Index");
         }
 
@@ -65,7 +65,7 @@ namespace StudentCatalog.Controllers
             if (ModelState.IsValid)
             {
                 //save
-                repository.InsertOrUpdate(student);
+                Repository.InsertOrUpdate(student);
 
                 return RedirectToAction("Index");
             }
