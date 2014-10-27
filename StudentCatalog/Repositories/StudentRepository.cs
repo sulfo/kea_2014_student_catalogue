@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using StudentCatalog.Abstract;
 using StudentCatalog.Models;
 
@@ -10,7 +10,8 @@ namespace StudentCatalog.Repositories
 {
     public class StudentRepository : IStudentRepository
     {
-        ApplicationDbContext _db = new ApplicationDbContext();
+        ApplicationDbContext _db =
+            new ApplicationDbContext();
 
         public List<Student> GetAll()
         {
@@ -19,26 +20,23 @@ namespace StudentCatalog.Repositories
 
         public Student Find(int id)
         {
-            return _db.Students.Find(id);
+            throw new NotImplementedException();
         }
 
-        public void Delete(Student student)
+        public void Delete(int id)
         {
-            _db.Entry(student).State = EntityState.Deleted;
-            _db.SaveChanges();
+            throw new NotImplementedException();
         }
 
         public void InsertOrUpdate(Student student)
         {
-            if (student.StudentId == 0)
+            //figure out if student is a new
+            //or edited object.
+            //if (student.StudentId == 0)
+
+            if (student.StudentId == default(int))
             {
-                _db.Students.Add(student);
-                _db.SaveChanges();
-            }
-            else
-            {
-                _db.Entry(student).State = EntityState.Modified;
-                _db.SaveChanges();
+
             }
         }
 

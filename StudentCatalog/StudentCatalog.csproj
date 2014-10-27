@@ -153,6 +153,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICompetencyRepository.cs" />
     <Compile Include="Abstract\IStudentRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -160,29 +161,47 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompetenciesController.cs" />
+    <Compile Include="Controllers\CompetencyHeadersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Abstract\ICompetencyHeaderRepository.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Competency.cs" />
+    <Compile Include="Models\CompetencyHeader.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CompetencyHeaderRepository.cs" />
+    <Compile Include="Repositories\CompetencyRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Site.less" />
+    <Content Include="Content\Site.css.map">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -237,10 +256,21 @@
     <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Thanks.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
-    <Content Include="Views\Students\_StudentCreateEditView.cshtml" />
+    <Content Include="Views\Students\_CreateEdit.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Create.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Delete.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Details.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Edit.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Index.cshtml" />
+    <Content Include="Views\Competencies\Create.cshtml" />
+    <Content Include="Views\Competencies\Delete.cshtml" />
+    <Content Include="Views\Competencies\Details.cshtml" />
+    <Content Include="Views\Competencies\Edit.cshtml" />
+    <Content Include="Views\Competencies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UserUploads\ProfileImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

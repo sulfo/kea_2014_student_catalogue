@@ -1,60 +1,55 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
-
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
-    white-space: normal;
+  white-space: normal;
 }
-
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+  max-width: 280px;
 }
-
 .field-validation-error {
-    color: red;
+  color: #ff0000;
 }
 .field-validation-valid {
-    display: none;
+  display: none;
 }
 .input-validation-color {
-    border: 1px solid #f00; 
-    background-color: #fee;
+  border: 1px solid #ff0000;
+  background-color: #fee;
 }
 .validation-summary-errors {
-    font-weight: bold; 
-    color: #f00;
+  font-weight: bold;
+  color: #ff0000;
 }
 .validation-summary-valid {
-    display: none;
+  display: none;
 }
-
 #myButton {
-    color: blue;
+  color: blue;
 }
-
 .grayBox {
-    padding: 2em 2em .5em;
-    background-color: #f4f4f4;
-    -webkit-box-shadow: inset -1px 1px 0 1px rgba(255, 255, 255, 1);
-    -moz-box-shadow: inset -1px 1px 0 1px rgba(255, 255, 255, 1);
-    -ms-box-shadow: inset -1px 1px 0 0 rgba(255, 255, 255, 1), 0 -1px 1px 1px rgba(0,0,0, 0.1);
-    box-shadow: inset -1px 1px 0 0 rgba(255, 255, 255, 1), 0 -1px 1px 1px rgba(0,0,0, 0.1);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
-    position: relative;
+  padding: 2em 2em .5em;
+  background-color: #f4f4f4;
+  -webkit-box-shadow: inset -1px 1px 0 1px #ffffff;
+  -moz-box-shadow: inset -1px 1px 0 1px #ffffff;
+  -ms-box-shadow: inset -1px 1px 0 0 #ffffff, 0 -1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -1px 1px 0 0 #ffffff, 0 -1px 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  position: relative;
 }
+/*# sourceMappingURL=Site.css.map */

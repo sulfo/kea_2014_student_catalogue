@@ -13,7 +13,7 @@ namespace StudentCatalog.Controllers
 {
     public class StudentsController : Controller
     {
-        IStudentRepository repository = new StudentRepository();
+        ApplicationDbContext _db = new ApplicationDbContext();
         public string WannaPlayDad()
         {
             return "NO!";
@@ -23,40 +23,35 @@ namespace StudentCatalog.Controllers
         public ActionResult Index()
         {
             ViewBag.Lucas = "Hi dad";
-            List<Student> students = repository.GetAll();
+            List<Student> students = _db.Students.ToList();
+            
             return View(students);
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Student student = repository.Find(id);
+            Student student = _db.Students.Find(id);
             return View(student);
         }
 
         [HttpPost]
-        public ActionResult Edit(Student student)
+        public ActionResult Edit(Student student, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
-                repository.InsertOrUpdate(student);
+                student.SaveImage(image, Server.MapPath("~"), "/UserUploads/ProfileImages/");
+                _db.Entry(student).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(student);
         }
 
         [HttpGet]
-        public ActionResult Delete(int id)
-        {
-            Student student = repository.Find(id);
-            repository.Delete(student);
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            return View(new Student());
         }
 
         [HttpPost]
@@ -65,7 +60,8 @@ namespace StudentCatalog.Controllers
             if (ModelState.IsValid)
             {
                 //save
-                repository.InsertOrUpdate(student);
+                _db.Students.Add(student);
+                _db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
