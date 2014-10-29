@@ -14,10 +14,16 @@ namespace StudentCatalog.Controllers
 {
     public class CompetenciesController : Controller
     {
-        private ICompetencyHeaderRepository _competencyHeaderRepository = new CompetencyHeaderRepository();
-        private ICompetencyRepository _competencyRepository = new CompetencyRepository();
-        //ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ICompetencyHeaderRepository _competencyHeaderRepository;
+        private readonly ICompetencyRepository _competencyRepository;
 
+        public CompetenciesController(
+            ICompetencyHeaderRepository competencyHeaderRepository
+            , ICompetencyRepository competencyRepository)
+        {
+            _competencyHeaderRepository = competencyHeaderRepository;
+            _competencyRepository = competencyRepository;
+        }
 
 
         // GET: Competencies
@@ -62,7 +68,7 @@ namespace StudentCatalog.Controllers
             if (ModelState.IsValid)
             {
                 _competencyRepository.InsertOrUpdate(competency);
-                _competencyHeaderRepository.Save();
+                _competencyRepository.Save();
                 return RedirectToAction("Index");
             }
 

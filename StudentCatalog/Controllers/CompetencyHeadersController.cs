@@ -17,7 +17,7 @@ namespace StudentCatalog.Controllers
             new CompetencyHeaderRepository();
 
         // GET: CompetencyHeaders
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             return View(_competencyHeaderRepository.GetAll());
         }

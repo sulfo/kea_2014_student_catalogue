@@ -18,6 +18,11 @@ namespace StudentCatalog.Repositories
             return _db.CompetencyHeaders.ToList();
         }
 
+        public IEnumerable<CompetencyHeader> All
+        {
+            get { return _db.CompetencyHeaders; }
+        }
+
         public CompetencyHeader Find(int id)
         {
             return _db.CompetencyHeaders.Find(id);

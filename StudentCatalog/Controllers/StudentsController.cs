@@ -13,7 +13,7 @@ namespace StudentCatalog.Controllers
 {
     public class StudentsController : Controller
     {
-        IStudentRepository Repository = new StudentRepository();
+        ApplicationDbContext _db = new ApplicationDbContext();
         public string WannaPlayDad()
         {
             return "NO!";
@@ -23,14 +23,15 @@ namespace StudentCatalog.Controllers
         public ActionResult Index()
         {
             ViewBag.Lucas = "Hi dad";
-            List<Student> students = Repository.GetAll();
+            List<Student> students = _db.Students.ToList();
+            
             return View(students);
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Student student = Repository.Find(id);
+            Student student = _db.Students.Find(id);
             return View(student);
         }
 
@@ -39,17 +40,12 @@ namespace StudentCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
-                Repository.InsertOrUpdate(student);
+                student.SaveImage(image, Server.MapPath("~"), "/UserUploads/ProfileImages/");
+                _db.Entry(student).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(student);
-        }
-
-        [HttpGet]
-        public ActionResult Delete(int id)
-        {
-            Repository.Delete(id);
-            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -64,7 +60,8 @@ namespace StudentCatalog.Controllers
             if (ModelState.IsValid)
             {
                 //save
-                Repository.InsertOrUpdate(student);
+                _db.Students.Add(student);
+                _db.SaveChanges();
 
                 return RedirectToAction("Index");
             }

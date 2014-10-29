@@ -18,6 +18,7 @@ namespace StudentCatalog.Repositories
         {
             return _db.Competencies.ToList();
         }
+ 
 
         public Competency Find(int id)
         {
