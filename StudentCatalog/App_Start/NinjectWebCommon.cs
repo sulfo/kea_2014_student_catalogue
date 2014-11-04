@@ -69,6 +69,7 @@ namespace StudentCatalog.App_Start
                 To<CompetencyHeaderRepository>();
 
             kernel.Bind<ICompetencyRepository>().To<CompetencyRepository>();
+            kernel.Bind<IStudentRepository>().To<StudentRepository>();
         }        
     }
 }

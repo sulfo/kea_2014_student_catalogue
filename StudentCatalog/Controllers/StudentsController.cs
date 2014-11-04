@@ -8,12 +8,22 @@ using System.Web.Mvc;
 using StudentCatalog.Abstract;
 using StudentCatalog.Models;
 using StudentCatalog.Repositories;
+using StudentCatalog.ViewModels;
 
 namespace StudentCatalog.Controllers
 {
     public class StudentsController : Controller
     {
-        ApplicationDbContext _db = new ApplicationDbContext();
+        private IStudentRepository _studentRepository;
+        private readonly ICompetencyHeaderRepository _competencyHeaderRepository;
+
+        public StudentsController(IStudentRepository studentRepository, ICompetencyHeaderRepository competencyHeaderRepository)
+        {
+            _studentRepository = studentRepository;
+            _competencyHeaderRepository = competencyHeaderRepository;
+        }
+
+
         public string WannaPlayDad()
         {
             return "NO!";
@@ -23,15 +33,23 @@ namespace StudentCatalog.Controllers
         public ActionResult Index()
         {
             ViewBag.Lucas = "Hi dad";
-            List<Student> students = _db.Students.ToList();
-            
-            return View(students);
+            List<Student> students = _studentRepository.GetAll().ToList();
+            List<CompetencyHeader> competencyHeaders =
+                _competencyHeaderRepository.AllIncluding(x => x.Competencies).ToList();
+
+            StudentIndexViewModel vm = new StudentIndexViewModel
+            {
+                CompetencyHeaders = competencyHeaders,
+                Students = students
+            };
+
+            return View(vm);
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Student student = _db.Students.Find(id);
+            Student student = _studentRepository.Find(id);
             return View(student);
         }
 
@@ -40,9 +58,10 @@ namespace StudentCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
-                student.SaveImage(image, Server.MapPath("~"), "/UserUploads/ProfileImages/");
-                _db.Entry(student).State = EntityState.Modified;
-                _db.SaveChanges();
+                string path = Server == null ? "" : Server.MapPath("~");
+                student.SaveImage(image, path , "/UserUploads/ProfileImages/");
+                _studentRepository.InsertOrUpdate(student);
+                _studentRepository.Save();
                 return RedirectToAction("Index");
             }
             return View(student);
@@ -55,13 +74,15 @@ namespace StudentCatalog.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Student student)
+        public ActionResult Create(Student student, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
                 //save
-                _db.Students.Add(student);
-                _db.SaveChanges();
+                string path = Server == null ? "" : Server.MapPath("~");
+                student.SaveImage(image, path, "/UserUploads/ProfileImages/");
+                _studentRepository.InsertOrUpdate(student);
+                _studentRepository.Save();
 
                 return RedirectToAction("Index");
             }

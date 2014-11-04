@@ -1,9 +1,18 @@
 ﻿@using StudentCatalog.Models
-@model IEnumerable<StudentCatalog.Models.Student>
+@model StudentCatalog.ViewModels.StudentIndexViewModel
 
 @{
     ViewBag.Title = "Index";
 }
+
+
+@foreach (Student student in Model.Students)
+{
+    <a href="@Url.Action("Edit", "Students", new { id = student.StudentId })">
+        <img src="@student.ProfileImagePath" alt="Profile image" class="thumbnail img-responsive"/>
+    </a>
+}
+
 
 <h2>Index</h2>
 
@@ -13,21 +22,21 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Firstname)
+           Firstname
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Lastname)
+            Lastname
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MobilePhone)
+            Mobile Phone
         </th>
         <th></th>
     </tr>
 
-@foreach (Student item in Model) {
+@foreach (Student item in Model.Students) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Firstname)
@@ -40,6 +49,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MobilePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfileImagePath)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |

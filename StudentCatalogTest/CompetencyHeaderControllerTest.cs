@@ -10,7 +10,7 @@ using StudentCatalog.Models;
 namespace StudentCatalogTest
 {
     [TestClass]
-    public class CompetencyHeaderControllerTest
+    public class CompetencyControllerTest
     {
         [TestMethod]
         public void TestMethod1()
@@ -41,5 +41,9 @@ namespace StudentCatalogTest
             competencyRepositoryMock.Verify( x => x.InsertOrUpdate(comp));
             competencyRepositoryMock.Verify(x => x.Save());
         }
+
+
+
+
     }
 }

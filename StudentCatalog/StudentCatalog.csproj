@@ -206,6 +206,7 @@
     <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UnitTestExample\DiscountRules.cs" />
+    <Compile Include="ViewModels\StudentIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -290,6 +291,7 @@
     <Content Include="Views\Competencies\Details.cshtml" />
     <Content Include="Views\Competencies\Edit.cshtml" />
     <Content Include="Views\Competencies\Index.cshtml" />
+    <Content Include="Views\Home\Bootstrap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

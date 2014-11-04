@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,12 +21,12 @@ namespace StudentCatalog.Repositories
 
         public Student Find(int id)
         {
-            throw new NotImplementedException();
+            return _db.Students.Find(id);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _db.Students.Remove(_db.Students.Find(id));
         }
 
         public void InsertOrUpdate(Student student)
@@ -36,13 +37,17 @@ namespace StudentCatalog.Repositories
 
             if (student.StudentId == default(int))
             {
-
+                _db.Students.Add(student);
+            }
+            else
+            {
+                _db.Entry(student).State = EntityState.Modified;
             }
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _db.SaveChanges();
         }
     }
 }
