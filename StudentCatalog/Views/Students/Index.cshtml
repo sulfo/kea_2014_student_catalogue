@@ -6,59 +6,133 @@
 }
 
 
-@foreach (Student student in Model.Students)
-{
-    <a href="@Url.Action("Edit", "Students", new { id = student.StudentId })">
-        <img src="@student.ProfileImagePath" alt="Profile image" class="thumbnail img-responsive"/>
-    </a>
-}
-
 
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-           Firstname
-        </th>
-        <th>
-            Lastname
-        </th>
-        <th>
-            Email
-        </th>
-        <th>
-            Mobile Phone
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (Student item in Model.Students) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Firstname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lastname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MobilePhone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProfileImagePath)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StudentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StudentId })
-        </td>
-    </tr>
-}
+<div class="row">
+    <div class="col-sm-3 hidden-xs" id="sidebar">
+        <img src="~/Content/logo.png" class=" img-responsive " alt="Logo" />
+    </div>
 
-</table>
+
+    <div class="col-sm-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Filter displayed students
+            </div>
+            
+            
+            <input id="filterBtn" type="button" value="Filter on competencies" 
+                   class="btn btn-default"/>
+            
+            <input id="editCompetency" type="button" value="Edit competencies"
+                   class="btn btn-primary" />
+            
+            <input id="newCompetencyHeader" value="Create competency header" type="button"
+                   class="btn btn-danger"/>
+
+            <div id="competecyHeadersDiv" class="MarginLeft40 Invisible">
+                
+                <div id="appendDiv" class="row ">
+                   
+                </div>
+
+                @foreach (var compHeader in Model.CompetencyHeaders)
+                {
+                    <div class="FilterCompetencies">
+                        <label class="lblHeader">
+                            <input type="checkbox" name="competencyHeader" class="CompetencyHeader MarginRight5" />
+                            @compHeader.Name
+                        </label>
+                        <span class="glyphicon glyphicon-plus Invisible"></span>
+
+                        <div class="outerContainer">
+                            @foreach (var competency in @compHeader.Competencies)
+                            {
+                                <div class="MarginLeft40 CompetencyDiv">
+
+                                    <label class="CompetencyLabel">
+                                        <input class="MarginRight5 Competency" type="checkbox" 
+                                               name="Competencies" value="@competency.Name" />@competency.Name
+                                    </label>
+                                    <span class="glyphicon glyphicon-pencil Invisible"></span>
+                                    <span class="glyphicon glyphicon-remove Invisible"></span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            @foreach (Student student in Model.Students)
+            {
+                <div class="col-lg-2 col-sm-3 col-xs-4">
+                    <a href="@Url.Action("Edit", "Students", new { id=@student.StudentId})">
+
+                        <img src="../../@student.ProfileImagePath" class="profileImage thumbnail img-responsive">
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $("#filterBtn").click(function() {
+            $("#competecyHeadersDiv").toggle('slow');
+        });
+        $("#editCompetency").click(function() {
+            $(".glyphicon-plus, .glyphicon-pencil, .glyphicon-remove").toggle();
+        });
+        $(".glyphicon-plus").click(function() {
+            $(this).parent().children(".outerContainer").append('<input type="text" class="form-control col-xs-8" ' +
+                'placeholder="New Competency " /><div class="FloppyDiskDiv">' +
+                '<span class="glyphicon glyphicon-floppy-disk"> </span></div>');
+        });
+
+        $(document).on("click", ".glyphicon-floppy-disk", function() {
+
+            var data = { Name: "New value", CompHeader: "Design" };
+
+            console.log($(this).parent().parent());
+
+            //1: Get the value from the input text field
+            //-  navigating with parent(), children(selector here)
+
+            //2: Use the ajax call
+
+            //3: In the success function: dynamically update the DOM (html) with the new 
+            // competency.
+
+
+            @*$.ajax({
+                type: 'POST',
+                url: "@Url.Action("Create", "Competencies")",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                success: function (returnValue) {
+                    alert(returnValue);
+                },
+                error: function () {
+                    alert("failure");
+                }
+            });*@
+
+
+        });
+
+    });
+
+</script>

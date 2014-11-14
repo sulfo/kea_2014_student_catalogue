@@ -52,4 +52,15 @@ textarea {
   border-radius: 4px;
   position: relative;
 }
+.Invisible {
+  display: none;
+}
+.glyphicon-pencil,
+.glyphicon-plus {
+  cursor: pointer;
+}
+.FloppyDiskDiv {
+  margin-left: 20px;
+  margin-top: 10px;
+}
 /*# sourceMappingURL=Site.css.map */

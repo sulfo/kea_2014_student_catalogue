@@ -62,18 +62,26 @@ namespace StudentCatalog.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CompetencyId,Name,CompetencyHeaderId")] Competency competency)
+//        [ValidateAntiForgeryToken]
+        
+        public JsonResult Create(
+            [Bind(Include = "CompetencyId,Name,CompetencyHeaderId")] 
+            Competency competency, String CompHeader)
         {
             if (ModelState.IsValid)
             {
+                CompetencyHeader competencyHeader = _competencyHeaderRepository.
+                    GetAll().Where(x => x.Name == CompHeader).FirstOrDefault();
+
+                competency.CompetencyHeaderId = competencyHeader.CompetencyHeaderId;
+
                 _competencyRepository.InsertOrUpdate(competency);
                 _competencyRepository.Save();
-                return RedirectToAction("Index");
+                return Json(competency.Name);
             }
 
             ViewBag.CompetencyHeaderId = new SelectList(_competencyHeaderRepository.GetAll(), "CompetencyHeaderId", "Name", competency.CompetencyHeaderId);
-            return View(competency);
+            return Json("Invalid");
         }
 
         // GET: Competencies/Edit/5
