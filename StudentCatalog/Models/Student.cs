@@ -37,5 +37,22 @@ namespace StudentCatalog.Models
 
         public String MobilePhone { get; set; }
 
+        public String ProfileImagePath { get; set; }
+
+        public void SaveImage(
+            HttpPostedFileBase image, 
+            String serverPath, 
+            String pathToFile)
+        {
+            if (image == null) return;
+
+            string createFileWithName =
+                Guid.NewGuid().ToString();
+
+            ImageModel.ResizeAndSave(serverPath + pathToFile,
+                createFileWithName, image.InputStream, 200);
+
+            ProfileImagePath = pathToFile + createFileWithName + ".jpg";
+        }
     }
 }

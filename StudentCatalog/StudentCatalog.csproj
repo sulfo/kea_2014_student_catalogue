@@ -40,6 +40,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -92,6 +104,9 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -153,36 +168,65 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICompetencyRepository.cs" />
     <Compile Include="Abstract\IStudentRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompetenciesController.cs" />
+    <Compile Include="Controllers\CompetencyHeadersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Abstract\ICompetencyHeaderRepository.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="DependencyInjectionExample\CanFly.cs" />
+    <Compile Include="DependencyInjectionExample\CannotFly.cs" />
+    <Compile Include="DependencyInjectionExample\Duck.cs" />
+    <Compile Include="DependencyInjectionExample\IFlyBehaviour.cs" />
+    <Compile Include="DependencyInjectionExample\MallardDuck.cs" />
+    <Compile Include="DependencyInjectionExample\RubberDuck.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Competency.cs" />
+    <Compile Include="Models\CompetencyHeader.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CompetencyHeaderRepository.cs" />
+    <Compile Include="Repositories\CompetencyRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="UnitTestExample\DiscountRules.cs" />
+    <Compile Include="ViewModels\StudentIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Logo.PNG" />
+    <Content Include="Content\Site.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Site.less" />
+    <Content Include="Content\Site.css.map">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -237,10 +281,22 @@
     <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Thanks.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
-    <Content Include="Views\Students\_StudentCreateEditView.cshtml" />
+    <Content Include="Views\Students\_CreateEdit.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Create.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Delete.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Details.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Edit.cshtml" />
+    <Content Include="Views\CompetencyHeaders\Index.cshtml" />
+    <Content Include="Views\Competencies\Create.cshtml" />
+    <Content Include="Views\Competencies\Delete.cshtml" />
+    <Content Include="Views\Competencies\Details.cshtml" />
+    <Content Include="Views\Competencies\Edit.cshtml" />
+    <Content Include="Views\Competencies\Index.cshtml" />
+    <Content Include="Views\Home\Bootstrap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UserUploads\ProfileImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

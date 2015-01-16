@@ -53,58 +53,12 @@ c:\users\christian\documents\visual studio 2013\Projects\StudentCatalog\StudentC
 c:\users\christian\documents\visual studio 2013\Projects\StudentCatalog\StudentCatalog\obj\Debug\StudentCatalog.csprojResolveAssemblyReference.cache
 c:\users\christian\documents\visual studio 2013\Projects\StudentCatalog\StudentCatalog\obj\Debug\StudentCatalog.dll
 c:\users\christian\documents\visual studio 2013\Projects\StudentCatalog\StudentCatalog\obj\Debug\StudentCatalog.pdb
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\obj\Debug\StudentCatalog.csprojResolveAssemblyReference.cache
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\obj\Debug\StudentCatalog.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\StudentCatalog.dll.config
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\StudentCatalog.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\StudentCatalog.pdb
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Antlr3.Runtime.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\EntityFramework.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\EntityFramework.SqlServer.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Newtonsoft.Json.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Owin.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.Helpers.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.Mvc.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.Optimization.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.Razor.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.WebPages.Deployment.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.WebPages.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.WebPages.Razor.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\WebGrease.dll
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.Helpers.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.Mvc.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.Optimization.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.Razor.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.WebPages.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.WebPages.Deployment.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\System.Web.WebPages.Razor.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Antlr3.Runtime.pdb
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Newtonsoft.Json.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\EntityFramework.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\EntityFramework.SqlServer.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\ruben\Dropbox\Datamatiker\web development\kea_2014_student_catalogue\StudentCatalog\obj\Debug\StudentCatalog.pdb
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\Ninject.dll
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\Ninject.Web.Common.dll
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\Ninject.Web.Mvc.dll
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\WebActivatorEx.dll
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\Ninject.xml
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\Ninject.Web.Common.xml
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\Ninject.Web.Mvc.xml
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\Moq.dll
+C:\Users\Christian\Documents\Visual Studio 2013\Projects\StudentCatalog\StudentCatalog\bin\Moq.xml

@@ -11,7 +11,7 @@ namespace StudentCatalog.Abstract
     {
         List<Student> GetAll();
         Student Find(int id);
-        void Delete(Student student);
+        void Delete(int id);
         void InsertOrUpdate(Student student);
         void Save();
     }
